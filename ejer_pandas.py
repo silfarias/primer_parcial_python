@@ -43,7 +43,7 @@ def calculo_valor_total():
     return valor_total # Retornamos
 
 valor_total = calculo_valor_total()
-print(valor_total)
+# print(valor_total)
 
 
 # Simular algunas ventas y actualizar la cantidad disponible de productos vendidos
@@ -61,7 +61,7 @@ def simulacion_ventas():
     return df
 
 simulacion = simulacion_ventas()
-print(simulacion) #Mostramos la cantidad restante de cada producto despues de la simulacion de ventas
+# print(simulacion) #Mostramos la cantidad restante de cada producto despues de la simulacion de ventas
 
 
 def new_data_drame(): #Creamos nuevo DataFrame
@@ -85,4 +85,3 @@ def grafico():
     plt.show()
     
 grafico() # Utilizamos función
-    
