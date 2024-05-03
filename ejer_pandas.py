@@ -35,7 +35,7 @@ def calculo_valor_producto():
 
 
 valor_total_por_producto = calculo_valor_producto() # Almacenamos la funcion de calculo en una variable
-# print(valor_total_por_producto)
+print(valor_total_por_producto)
 
 # Cálculo del valor total del inventario sumando el valor total de cada producto
 def calculo_valor_total():
@@ -43,11 +43,10 @@ def calculo_valor_total():
     return valor_total # Retornamos
 
 valor_total = calculo_valor_total()
-# print(valor_total)
+print(valor_total)
+
 
 # Simular algunas ventas y actualizar la cantidad disponible de productos vendidos
-
-
 def simulacion_ventas():
     ventas_simuladas = [ # Creamos una nueva lista de diccionarios con simulaciones de ventas de algunos productos
         {"nombre": "Chaqueta", "cantidad_vendida": 9},
@@ -58,11 +57,11 @@ def simulacion_ventas():
     for venta in ventas_simuladas: # Iteramos sobre la lista
         nombre_prod = venta['nombre']
         cant_vendida = venta["cantidad_vendida"]
-        df.loc[df['nombre'] == nombre_prod, 'cantidad_disponible'] -= cant_vendida
+        df.loc[df['nombre'] == nombre_prod, 'cantidad_disponible'] -= cant_vendida #Devolvemos el DataFrame con los elementos que se encuentran en las filas y columnas especificadas.
     return df
 
 simulacion = simulacion_ventas()
-# print(simulacion) #Mostramos la cantidad restante de cada producto despues de la simulacion de ventas
+print(simulacion) #Mostramos la cantidad restante de cada producto despues de la simulacion de ventas
 
 
 def new_data_drame(): #Creamos nuevo DataFrame
@@ -78,12 +77,12 @@ print(nuevo_df)
 # varible x: nombre de los productos
 # variable y: cantidad disponible
 def grafico():
-    fig, ax = plt.subplots()
-    ax.plot(nuevo_df['nombre'], nuevo_df['cantidad_disponible'])
+    fig, ax = plt.subplots() # Creamos la figura y los ejes
+    ax.plot(nuevo_df['nombre'], nuevo_df['cantidad_disponible']) #Utilizamos el df y obtenemos sus columnas para loe ejes
     plt.title('Cantidad de Productos Disponibles') # Agrega un titulo
-    plt.xlabel('Productos')
-    plt.ylabel('Cantidad Disponible')
+    plt.xlabel('Productos') # Agrega nombre el eje x
+    plt.ylabel('Cantidad Disponible') #Agrega nombre al eje y
     plt.show()
     
-grafico()
+grafico() # Utilizamos función
     
